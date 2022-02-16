@@ -7,17 +7,11 @@
 
 ### define variables
 script_name=$(basename "$0")
-version="0.1.1"
+version="0.1.5"
 
 ### point to machine-specific installer
 LINUX_EXE=/usr/bin/diagnosticator-linux.sh
-MAC_EXE=/usr/local/bin/diagnosticator/diagnosticator-mac.sh
-
-echo
-echo "# ========================== #"
-echo "# == diagnosticator 0.1.0 == #"
-echo "# ========================== #"
-echo
+MAC_EXE=/usr/local/bin/diagnosticator-mac.sh
 
 usage() {
     cat <<EOF
@@ -58,6 +52,11 @@ while (($# > 0)); do # while arguments count>0
     esac
 done
 
+echo
+echo "# ========================== #"
+echo "# == diagnosticator 0.1.5 == #"
+echo "# ========================== #"
+echo
 
 
 ### check running environment
