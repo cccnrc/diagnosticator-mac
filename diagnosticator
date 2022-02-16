@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+#
+# == diagnosticator 0.1.0 ==
+#
+
+LINUX_EXE=/usr/bin/diagnosticator-linux.sh
+MAC_EXE=./diagnosticator-mac.sh
+
+echo
+echo "# ========================== #"
+echo "# == diagnosticator 0.1.0 == #"
+echo "# ========================== #"
+echo
+
+### check running environment
+echo -e "0. checking ${BRIGHT}machine${NORMAL} ..."
+UNAME_OUT="$(uname -s)"
+case "${UNAME_OUT}" in
+    Linux*)     MACHINE=Linux;;
+    Darwin*)    MACHINE=Mac;;
+    CYGWIN*)    MACHINE=Cygwin;;
+    MINGW*)     MACHINE=MinGw;;
+    *)          MACHINE="UNKNOWN:${UNAME_OUT}"
+esac
+
+if [[ "${MACHINE}" == "Linux" ]]; then
+  EXE=$LINUX_EXE
+elif [[ "${MACHINE}" == "Mac" ]]; then
+  EXE=$MAC_EXE
+else
+  echo "ATTENTION: we are still working on ${MACHINE} implementation ..."
+  echo " -> come back soon ;)"
+  echo
+  exit 1
+fi
+
+echo
+echo -e " -> running in: ${MACHINE}"
+echo -e "    -> running: ${EXE}"
+$EXE
