@@ -21,12 +21,6 @@ UNDERLINE=$(tput smul)
 # printf "%40s\n" " ${BRIGHT}${UNDERLINE}${RED}ATTENTION${NORMAL}: you have another instance of ${BRIGHT}${GREEN}diagnosticator${NORMAL} running (PID: ${BLUE}${BRIGHT}CIAO${NORMAL})"
 
 printf "%40s\n" " 0. checking ${BRIGHT}${GREEN}/usr/lib/diagnosticator${NORMAL} ..."
-if [ ! -d /usr/lib/diagnosticator ]; then
-  printf "%40s\n" " -> creating ${BRIGHT}${GREEN}/usr/lib/diagnosticator${NORMAL} ..."
-  mkdir -p /usr/lib/diagnosticator
-else
-  printf "%40s\n" " -> ${BRIGHT}${GREEN}/usr/lib/diagnosticator${NORMAL} found"
-fi
 
 
 
