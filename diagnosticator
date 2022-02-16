@@ -1,17 +1,64 @@
 #!/usr/bin/env bash
 
-#
-# == diagnosticator 0.1.0 ==
-#
+#########################
+# Author: Enrico Cocchi #
+### Date: 16 feb 2022 ###
+#########################
 
+### define variables
+script_name=$(basename "$0")
+version="0.1.1"
+
+### point to machine-specific installer
 LINUX_EXE=/usr/bin/diagnosticator-linux.sh
-MAC_EXE=./diagnosticator-mac.sh
+MAC_EXE=/usr/local/bin/diagnosticator/diagnosticator-mac.sh
 
 echo
 echo "# ========================== #"
 echo "# == diagnosticator 0.1.0 == #"
 echo "# ========================== #"
 echo
+
+usage() {
+    cat <<EOF
+Script name: $script_name
+Description:
+============
+This script automates Diagnosticator installation and run
+======================================
+See https://diagnosticator.com
+Usage:
+======
+$script_name [ -h | --help | -v | --version]
+Examples:
+=========
+    # install and run
+    $script_name
+    # Show help
+    $script_name -h
+    # Show version
+    $script_name -v
+EOF
+}
+
+while (($# > 0)); do # while arguments count>0
+    case "$1" in
+    -h | --help)
+        usage
+        exit
+        ;;
+    -v | --version)
+        echo ${version}
+        exit
+        ;;
+    *) # unknown flag/switch
+        POSITIONAL+=("$1")
+        shift
+        ;;
+    esac
+done
+
+
 
 ### check running environment
 echo -e "0. checking ${BRIGHT}machine${NORMAL} ..."

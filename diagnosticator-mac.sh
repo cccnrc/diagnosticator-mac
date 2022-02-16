@@ -20,10 +20,25 @@ UNDERLINE=$(tput smul)
 
 # printf "%40s\n" " ${BRIGHT}${UNDERLINE}${RED}ATTENTION${NORMAL}: you have another instance of ${BRIGHT}${GREEN}diagnosticator${NORMAL} running (PID: ${BLUE}${BRIGHT}CIAO${NORMAL})"
 
-printf "%40s\n" " 0. checking ${BRIGHT}${GREEN}/usr/lib/diagnosticator${NORMAL} ..."
-
-
-
+### 0. CHECK
+# 1. docker
+echo
+printf "%40s\n" " 0.1. checking ${BRIGHT}${GREEN}docker${NORMAL} ..."
+if [ ! "$(command -v docker)" ]; then
+  printf "%40s\n" "   -> Please install ${BRIGHT}${GREEN}docker${NORMAL} first: ${BLUE}${UNDERLINE}https://github.com/cccnrc/diagnosticator-mac#dependencies${NORMAL}"
+  exit 1
+else
+  printf "%40s\n" "   -> ${BRIGHT}${GREEN}docker${NORMAL} found"
+fi
+# 2. docker-compose
+printf "%40s\n" " 0.2. checking ${BRIGHT}${GREEN}docker-compose${NORMAL} ..."
+if [ ! "$(command -v docker-compose)" ]; then
+  printf "%40s\n" "   -> Please install ${BRIGHT}${GREEN}docker-compose${NORMAL} first: ${BLUE}${UNDERLINE}https://github.com/cccnrc/diagnosticator-mac#dependencies${NORMAL}"
+  exit 1
+else
+  printf "%40s\n" "   -> ${BRIGHT}${GREEN}docker-compose${NORMAL} found"
+fi
+echo
 
 
 
