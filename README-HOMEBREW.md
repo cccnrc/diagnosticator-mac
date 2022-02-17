@@ -56,15 +56,14 @@ brew uninstall diagnosticator
 ## Update [diagnosticator-mac](https://github.com/cccnrc/diagnosticator-mac.git)
 This updates the scripts run. You have to create a new tag:
 ```
-VERSION='v0.1.6'
+VERSION='0.1.8'
 git add .
-git commit -m "$VERSION"
+git commit -m "version $VERSION"
 git push
 git add .
-git tag -a $VERSION -m "$VERSION"
-git push origin $VERSION
+git tag -a v"${VERSION}" -m "version $VERSION"
+git push origin v"${VERSION}"
 ```
-
 ***create the new realease*** on [diagnosticator-mac](https://github.com/cccnrc/diagnosticator-mac/tags) and get the `.tar.gz` [v0.1.1](https://github.com/cccnrc/diagnosticator-mac/archive/refs/tags/v0.1.1.tar.gz)
 ```
 brew create https://github.com/cccnrc/diagnosticator-mac/archive/refs/tags/v0.1.1.tar.gz
