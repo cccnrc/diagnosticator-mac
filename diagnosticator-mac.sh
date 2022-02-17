@@ -161,8 +161,6 @@ if [ $NEED_AUTHENTICATION -ne 0 ]; then
         printf "%s" "${NORMAL} -> enter your ${BRIGHT}${CYAN}password${NORMAL}:  "
         read  -s BASIC_AUTH_PASSWORD
         echo
-        BASIC_AUTH_USER='enrico0'
-        BASIC_AUTH_PASSWORD='MZpq9731+-'
         break
       elif [[ "$USER_BOOL" == "n" ]] || [[ "$USER_BOOL" == "N" ]]; then
         printf "%s\n" " -> register here: ${BRIGHT}${UNDERLINE}${BLUE}https://diagnosticator.com/auth/register${NORMAL}"
