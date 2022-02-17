@@ -56,13 +56,16 @@ brew uninstall diagnosticator
 ## Update [diagnosticator-mac](https://github.com/cccnrc/diagnosticator-mac.git)
 This updates the scripts run. You have to create a new tag:
 ```
+VERSION='v0.1.6'
 git add .
-git tag -a v0.1.4 -m "version 0.1.4"
-git push origin v0.1.4
+git commit -m "$VERSION"
+git push
+git add .
+git tag -a $VERSION -m "$VERSION"
+git push origin $VERSION
 ```
-- ***note***: be sure that the whole repo is updated, otherwise commit a `main` change as well
 
-create the new realease on [diagnosticator-mac](https://github.com/cccnrc/diagnosticator-mac/tags) and get the `.tar.gz` [v0.1.1](https://github.com/cccnrc/diagnosticator-mac/archive/refs/tags/v0.1.1.tar.gz)
+***create the new realease*** on [diagnosticator-mac](https://github.com/cccnrc/diagnosticator-mac/tags) and get the `.tar.gz` [v0.1.1](https://github.com/cccnrc/diagnosticator-mac/archive/refs/tags/v0.1.1.tar.gz)
 ```
 brew create https://github.com/cccnrc/diagnosticator-mac/archive/refs/tags/v0.1.1.tar.gz
 ```
@@ -75,7 +78,6 @@ rm /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core/Formula/diagnosticato
 Then update `brew`:
 ```
 brew upgrade
-# brew install diagnosticator
 diagnosticator -v
 ```
 
@@ -90,4 +92,5 @@ brew untap cccnrc/diagnosticator
 then just tap again
 ```
 brew tap cccnrc/diagnosticator
+brew install diagnosticator
 ```
