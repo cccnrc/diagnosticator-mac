@@ -2,12 +2,12 @@
 
 #########################
 # Author: Enrico Cocchi #
-### Date: 16 feb 2022 ###
+### Date: 17 feb 2022 ###
 #########################
 
 ### define variables
 script_name=$(basename "$0")
-version="0.1.5"
+version="0.1.9"
 
 ### point to machine-specific installer
 LINUX_EXE=/usr/bin/diagnosticator-linux.sh

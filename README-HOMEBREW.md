@@ -60,7 +60,6 @@ VERSION='0.1.8'
 git add .
 git commit -m "version $VERSION"
 git push
-git add .
 git tag -a v"${VERSION}" -m "version $VERSION"
 git push origin v"${VERSION}"
 ```

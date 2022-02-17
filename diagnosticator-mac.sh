@@ -19,7 +19,7 @@ UNDERLINE=$(tput smul)
 
 
 ### define files
-DIAGNOSTICATOR_FILES_DIR=/Users/cccnrc/diagnosticator/files
+DIAGNOSTICATOR_FILES_DIR=/usr/local/opt/diagnosticator/bin/files/
 DOCKER_COMPOSE_FILE=${DIAGNOSTICATOR_FILES_DIR}/docker-compose.yml
 DOCKER_COMPOSE_PID_FILE=${DIAGNOSTICATOR_FILES_DIR}/docker-compose.pid
 DIAGNOSTICATOR_CREDENTIALS=${DIAGNOSTICATOR_FILES_DIR}/credentials.json
