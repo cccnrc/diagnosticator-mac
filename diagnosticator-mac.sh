@@ -50,6 +50,14 @@ for DEP in "${DEPENDENCIES[@]}"; do
 done
 echo
 
+### 0.a check docker actually runs
+if ! docker info > /dev/null 2>&1; then
+  printf "%s\n" "     ${BRIGHT}${RED}ERROR${NORMAL}: -> ${BRIGHT}${GREEN}docker${NORMAL} is found in path but is not running, please fix it: ${BLUE}${UNDERLINE}https://github.com/cccnrc/diagnosticator-mac#dependencies${NORMAL} and come back ;)"
+  printf "%s\n" "               -> tip: you need to successfully run ${BRIGHT}${LIME_YELLOW}docker run hello-world${NORMAL} from the terinal"
+  echo
+  exit 1
+fi
+
 ### 1. CHECK PROCESS RUNNING
 echo
 printf "%s\n" "${YELLOW}1.${NORMAL} checking if ${BRIGHT}${GREEN}diagnosticator${NORMAL} is running already on this system ..."
