@@ -18,7 +18,7 @@ REVERSE=$(tput smso)
 UNDERLINE=$(tput smul)
 
 
-### define files
+### define files pathways
 DIAGNOSTICATOR_FILES_DIR=/usr/local/opt/diagnosticator/bin/files/
 DOCKER_COMPOSE_FILE=${DIAGNOSTICATOR_FILES_DIR}/docker-compose.yml
 DOCKER_COMPOSE_PID_FILE=${DIAGNOSTICATOR_FILES_DIR}/docker-compose.pid

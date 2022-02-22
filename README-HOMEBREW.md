@@ -56,7 +56,7 @@ brew uninstall diagnosticator
 ## Update [diagnosticator-mac](https://github.com/cccnrc/diagnosticator-mac.git)
 This updates the scripts run. You have to create a new tag:
 ```
-VERSION='0.1.11'
+VERSION='0.1.12'
 git add .
 git commit -m "version $VERSION"
 git push
