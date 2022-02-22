@@ -10,8 +10,8 @@ script_name=$(basename "$0")
 version="0.1.11"
 
 ### point to machine-specific installer
-LINUX_EXE=/usr/bin/diagnosticator-linux.sh
-MAC_EXE=/usr/local/bin/diagnosticator-mac.sh
+LINUX_EXE=diagnosticator-linux.sh
+MAC_EXE=diagnosticator-mac.sh
 
 usage() {
     cat <<EOF
